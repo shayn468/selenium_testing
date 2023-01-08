@@ -1,5 +1,5 @@
 const webdriver = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
+const firefox = require('selenium-webdriver/firefox');
 const { By } = require('selenium-webdriver');
 
 function wait(milliseconds) {
@@ -9,8 +9,8 @@ function wait(milliseconds) {
 }
 const test = async () => {
     const driver = new webdriver.Builder()
-        .forBrowser('chrome')
-        .setChromeOptions(new chrome.Options().headless())
+        .forBrowser('firefox')
+        .setFirefoxOptions(new firefox.Options().headless())
         .build();
     console.log('Loading Webpage');
     await driver.get(`http://localhost:3000`);
